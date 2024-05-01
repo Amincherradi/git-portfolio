@@ -1,0 +1,13 @@
+
+<h1>Experiances</h1>
+<div class="progress-bar">
+    <div class="timeline"></div>
+    <div class="step" *ngFor="let step of steps" [ngClass]="{'active': step.date === 'Present'}">
+      <div class="circle-text">{{ step.date }}</div>
+      <div class="card" [ngClass]="step.position">
+        <div class="arrow"></div>
+        <div class="card-content">{{ step.content }}</div>
+      </div>
+    </div>
+  </div>
+  

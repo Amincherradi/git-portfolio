@@ -1,0 +1,63 @@
+.about-me {
+    display: flex;
+    background-color: #97E7E1;
+    text-align: start;
+    padding: 10px;
+    justify-content: center;
+    gap: 10px;
+}
+
+.pdp {
+    display: flex;
+    justify-content: flex-start; /* Align items to the left */
+    align-items: center;
+}
+
+.pdp img {
+    width: 150px; /* Adjust as needed */
+    height: 150px; /* Adjust as needed */
+    margin-right: 20px; /* Add space between profile picture and card */
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 60%; /* Adjust width as needed */
+    height: auto;
+    background-color: #d9f3f1;
+    padding: 10px;
+    color: #0c4948;
+    border-radius: 8px;
+    z-index: 1;
+}
+
+.tools {
+    display: flex;
+    align-items: center;
+    padding: 9px;
+}
+
+.circle {
+    padding: 0 4px;
+}
+
+.box {
+    display: inline-block;
+    align-items: center;
+    width: 10px;
+    height: 10px;
+    padding: 1px;
+    border-radius: 50%;
+}
+
+.red {
+    background-color: #ff605c;
+}
+
+.yellow {
+    background-color: #ffbd44;
+}
+
+.green {
+    background-color: #00ca4e;
+}

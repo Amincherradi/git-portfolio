@@ -1,1 +1,44 @@
-/* You can add global styles to this file, and also import other style files */
+*{
+  font-family: 'Brush Script MT', cursive;
+}
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #F8F6E3;
+    margin: 0;
+  }
+
+  .dark-mode {
+    h1,p,.content__container__list__item{
+      color: #fff;
+    }
+    .layout,.header,.section1,.section2,.section3{
+      background-color: #121212;
+    }
+    .card[_ngcontent-ng-c1557262799] {
+      background-color: #16a085;
+      color: #fff;
+    }
+    .about-me[_ngcontent-ng-c1557262799] {
+      background-color: #353535;
+    }
+    .step[_ngcontent-ng-c3882718396] {
+      background-color: #303030;
+       .circle-text[_ngcontent-ng-c3882718396] {
+        color: #fff;
+      }
+      .card[_ngcontent-ng-c3882718396] {
+        background-color: #16a085;
+        color: #fff;
+        
+      }
+      
+    }
+    .step[_ngcontent-ng-c3882718396].active[_ngcontent-ng-c3882718396] .card[_ngcontent-ng-c3882718396] {
+      color: #fff; 
+      border: 2px solid #fff;
+    }
+    .section3[_ngcontent-ng-c2714602935] {
+      background-color: #353535;
+  }
+  }

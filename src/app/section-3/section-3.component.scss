@@ -1,0 +1,112 @@
+// Variables
+$step-size: 90px; 
+$timeline-width: 2px;
+$timeline-color: #ccc;
+$transition-speed: 0.3s;
+$card-width: 223px;
+$card-padding: 10px;
+$card-background: #f0f0f0;
+$card-border-radius: 5px;
+$arrow-size: 8px;
+$arrow-color: #ccc;
+
+// Styling
+h1 {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  font-family: 'Brush Script MT', cursive;
+  text-transform: uppercase;
+  font-weight: lighter;
+  align-items: center;
+}
+
+.progress-bar {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timeline {
+  width: $timeline-width;
+  height: 100%;
+  background-color: $timeline-color;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.step {
+  width: $step-size;
+  height: $step-size;
+  border-radius: 50%;
+  background-color: #F8F6E3; // Circle background color
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Shadow effect
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color $transition-speed;
+  margin-bottom: 20px; // Add margin between steps
+
+  &:hover {
+    background-color: #D0D0D0; // Circle background color on hover
+  }
+
+  // Animation for the wave effect
+  animation: wave 2s infinite alternate;
+
+  .circle-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #333; // Adjust text color
+    font-size: 18px; // Adjust font size
+  }
+
+  .card {
+    width: $card-width;
+    background-color: $card-background;
+    border-radius: $card-border-radius;
+    padding: $card-padding;
+    position: absolute;
+    top: 50%; // Align the card vertically in the middle of the circle
+    transform: translateY(-50%);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    opacity: 1;
+    transition: opacity $transition-speed;
+    z-index: 1;
+
+    &.left {
+      left: calc(-1 * #{$card-width} - 30px); // Position the card to the left of the circle
+    }
+
+    &.right {
+      right: calc(-1 * #{$card-width} - 30px); // Position the card to the right of the circle
+    }
+    &:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Add a subtle shadow
+    }
+  }
+}
+.step.active .card {
+  background-color: rgb(130, 169, 243);
+  color: #444444; // Text color
+  border: 2px solid #000000; // White border
+  border-radius: 10px; // Rounded corners
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Add a subtle shadow
+  transition: transform 0.3s ease; // Smooth transition
+}
+// Define the keyframes for the wave animation
+@keyframes wave {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(5px); // Adjust the amplitude of the wave here
+  }
+}
