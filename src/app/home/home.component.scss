@@ -9,7 +9,7 @@
     "section1" 320px
     "section2" 600px
     "section3" 800px
-    "footer" 900px
+    "footer" 200px
     / 1fr;
   gap: 0px 8px;
   grid-auto-flow: row dense;
@@ -31,5 +31,14 @@
   align-items: center;
   margin: 0;
 }
-.footer { grid-area: footer; background-color: #97E7E1;}
+.footer { 
+  grid-area: footer; 
+  background-color: #1F1F1F;
+  color: #F8F6E3;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
 
