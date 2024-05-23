@@ -1,8 +1,8 @@
-
-<h1>Experiances</h1>
-<div class="progress-bar">
+<h1>Experiences</h1>
+<div class="progress-bar-container">
+  <div class="progress-bar" [ngClass]="{'shift-left': shiftLeft, 'shift-right': shiftRight}">
     <div class="timeline"></div>
-    <div class="step" *ngFor="let step of steps" [ngClass]="{'active': step.date === 'Present'}">
+    <div class="step" *ngFor="let step of steps" [ngClass]="{'active': step.date === 'Present', 'selected': selectedStep === step}" (click)="selectStep(step)">
       <div class="circle-text">{{ step.date }}</div>
       <div class="card" [ngClass]="step.position">
         <div class="arrow"></div>
@@ -11,3 +11,17 @@
     </div>
   </div>
   
+  <div *ngIf="selectedStep" class="details-card" [ngClass]="{'details-card-left': shiftRight, 'details-card-right': shiftLeft}">
+    <div class="card-header">
+      <h2>{{ selectedStep.title }}</h2>
+      <div class="card-date">{{ selectedStep.date }}</div>
+    </div>
+    <div class="card-content">
+      <ul *ngIf="selectedStep.details">
+        <li *ngFor="let detail of selectedStep.details.split('\n')">
+          {{ detail.trim() }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

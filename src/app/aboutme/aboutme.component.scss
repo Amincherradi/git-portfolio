@@ -1,63 +1,155 @@
-.about-me {
+// Color variables
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$background-color: #f8f9fa;
+$card-background: #ffffff;
+$text-color: #766846;
+$light-text: #766846;
+$border-radius: 10px;
+$box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+.about-me-container {
     display: flex;
-    background-color: #97E7E1;
-    text-align: start;
-    padding: 10px;
-    justify-content: center;
-    gap: 10px;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
 }
 
-.pdp {
-    display: flex;
-    justify-content: flex-start; /* Align items to the left */
-    align-items: center;
+.profile-card {
+    background-color: $card-background;
+    padding: 30px;
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+
+    .profile-img {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        margin-bottom: 30px;
+    }
+
+    h2 {
+        font-size: 24px;
+        color: $text-color;
+        margin-bottom: 5px;
+    }
+
+    .title {
+        font-size: 16px;
+        color: $secondary-color;
+        margin-bottom: 15px;
+    }
+
+    .social-links {
+        margin-bottom: 20px;
+
+        a {
+            margin: 0 10px;
+            display: inline-block;
+            transition: transform 0.3s;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+
+            img {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+
+    .contact-info {
+        font-size: 14px;
+        color: $text-color;
+        margin-bottom: 20px;
+
+        p {
+            margin: 5px 0;
+        }
+    }
+
+    .download-cv {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 20px;
+        background-color: $primary-color;
+        color: #fff;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s;
+
+        &:hover {
+            background-color: darken($primary-color, 10%);
+        }
+    }
 }
 
-.pdp img {
-    width: 150px; /* Adjust as needed */
-    height: 150px; /* Adjust as needed */
-    margin-right: 20px; /* Add space between profile picture and card */
-}
+.about-content {
+    flex: 1;
+    padding: 30px;
+    background-color: $card-background;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
 
-.card {
-    display: flex;
-    flex-direction: column;
-    width: 60%; /* Adjust width as needed */
-    height: auto;
-    background-color: #d9f3f1;
-    padding: 10px;
-    color: #0c4948;
-    border-radius: 8px;
-    z-index: 1;
-}
+    h1 {
+        font-size: 28px;
+        color: $text-color;
+        margin-bottom: 15px;
+        border-bottom: 2px solid $primary-color;
+        display: inline-block;
+        padding-bottom: 5px;
+    }
 
-.tools {
-    display: flex;
-    align-items: center;
-    padding: 9px;
-}
+    p {
+        font-size: 16px;
+        color: $light-text;
+        margin-bottom: 15px;
+        line-height: 1.6;
+    }
 
-.circle {
-    padding: 0 4px;
-}
+    h2 {
+        font-size: 22px;
+        color: $text-color;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
 
-.box {
-    display: inline-block;
-    align-items: center;
-    width: 10px;
-    height: 10px;
-    padding: 1px;
-    border-radius: 50%;
-}
+    .services {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
 
-.red {
-    background-color: #ff605c;
-}
+        .service {
+            flex: 1 1 35%;
+            background-color: $background-color;
+            padding: 20px;
+            border-radius: $border-radius;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
 
-.yellow {
-    background-color: #ffbd44;
-}
+            &:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+            }
 
-.green {
-    background-color: #00ca4e;
+            h3 {
+                font-size: 18px;
+                color: $text-color;
+                margin-bottom: 10px;
+            }
+
+            p {
+                font-size: 14px;
+                color: $light-text;
+                line-height: 1.5;
+            }
+            ul{
+                color: #3d382c;
+            }
+        }
+    }
 }

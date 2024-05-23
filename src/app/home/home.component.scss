@@ -17,14 +17,14 @@
 .layout{
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  
 }
-.header { grid-area: header; }
-.section1 { grid-area: section1;}
-.section2 { grid-area: section2; }
+.header { grid-area: header;background-color: #F8F6E3;}
+.section1 { grid-area: section1;background-color: #fff;}
+.section2 { grid-area: section2;background-color: #F8F6E3;}
 .section3 { 
   grid-area: section3;
-  background-color: #1BA287;
+  background-color: #BAD7E9;
   min-height: 80vh;
   display: flex;
   justify-content: center;

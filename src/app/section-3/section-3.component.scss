@@ -1,4 +1,3 @@
-// Variables
 $step-size: 90px; 
 $timeline-width: 2px;
 $timeline-color: #ccc;
@@ -9,16 +8,31 @@ $card-background: #f0f0f0;
 $card-border-radius: 5px;
 $arrow-size: 8px;
 $arrow-color: #ccc;
+$details-card-width: 300px;
+$details-card-padding: 20px;
+$details-card-background: #ffffff;
+$details-card-border-radius: 10px;
+$details-card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+$details-card-header-background: #007BFF;
+$details-card-header-color: #ffffff;
+$details-card-header-padding: 15px;
+$details-card-content-padding: 20px;
+$details-card-content-color: #333;
 
 // Styling
 h1 {
   display: flex;
   justify-content: center;
   gap: 10px;
-  font-family: 'Brush Script MT', cursive;
+  font-family: 'Calibri', ;
   text-transform: uppercase;
   font-weight: lighter;
   align-items: center;
+}
+
+.progress-bar-container {
+  position: relative;
+  width: 100%;
 }
 
 .progress-bar {
@@ -27,6 +41,15 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: transform $transition-speed ease-in-out;
+
+  &.shift-left {
+    transform: translateX(-200px); // Adjust as needed
+  }
+
+  &.shift-right {
+    transform: translateX(200px); // Adjust as needed
+  }
 }
 
 .timeline {
@@ -93,6 +116,7 @@ h1 {
     }
   }
 }
+
 .step.active .card {
   background-color: rgb(130, 169, 243);
   color: #444444; // Text color
@@ -101,6 +125,7 @@ h1 {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Add a subtle shadow
   transition: transform 0.3s ease; // Smooth transition
 }
+
 // Define the keyframes for the wave animation
 @keyframes wave {
   0% {
@@ -109,4 +134,69 @@ h1 {
   100% {
     transform: translateY(5px); // Adjust the amplitude of the wave here
   }
+}
+
+.details-card {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 20px;
+  background-color: $card-background;
+  border-radius: $card-border-radius;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  transition: opacity $transition-speed ease-in-out;
+  width: 30vw;
+
+  &.details-card-left {
+    right: calc(100% + 100px); 
+    transition: opacity $transition-speed ease-in-out;
+  }
+
+  &.details-card-right {
+    left: calc(100% + 100px);
+    transition: opacity $transition-speed ease-in-out;
+  }
+
+  .card-header {
+    color: #000;
+    padding: $details-card-header-padding;
+    border-radius: $details-card-border-radius $details-card-border-radius 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  
+    h2 {
+      margin: 0;
+    }
+  
+    .card-date {
+      background-color: rgba($details-card-header-color, 0.8);
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 14px;
+      transition: background-color 0.3s ease; /* Smooth transition effect */
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  
+    /* Add hover effect */
+    &:hover .card-date {
+      background-color: rgba($details-card-header-color, 1);
+    }
+  }
+  
+  .card-content {
+    padding: $details-card-content-padding;
+    color: $details-card-content-color;
+  
+    p {
+      margin: 0;
+      line-height: 1.6;
+    }
+  }
+  
 }
