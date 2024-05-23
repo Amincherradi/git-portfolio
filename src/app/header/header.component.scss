@@ -27,26 +27,61 @@
     left: 0; /* Adjust horizontal position as needed */
     width: 0;
     height: 0;
-    border-top: 120px solid #000; /* Increase size as needed */
+    border-top: 120px solid #000; /* Original color band */
     border-right: 120px solid transparent;
     transform: rotate(0deg); /* Rotate the triangle */
     z-index: 2; /* Ensure the logo appears above the parallax background */
+  
+    a {
+      position: absolute;
+      display: block;
+    }
+  
+    a:first-of-type img {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(20%, -214%);
+      z-index: 3;
+      background: transparent; /* Ensure the image appears above the triangle */
+    }
+  
+    a:nth-of-type(2) {
+      top: 60px; /* Adjust vertical position for the LinkedIn logo */
+      left: 60px; /* Adjust horizontal position for the LinkedIn logo */
+    }
+  
+    a:nth-of-type(2)::before {
+      content: "";
+      position: absolute;
+      top: -128px;
+      left: -126px;
+      width: 294px;
+      height: 61px;
+      background-color: #ffffff;
+      z-index: 1;
+      transform: rotate(-45deg);
+    }
+  
+    a:nth-of-type(2) img {
+      width: 131px;
+      height: 37px;
+      position: absolute;
+      left: -51px;
+      top: -112px;
+      z-index: 3;
+      background: transparent;
+      transform: rotate(-45deg);
+    }
   }
-  .logo img{
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(20%, -214%);
-    z-index: 2;
-    background: transparent;/* Ensure the image appears above the triangle */
-  }
+  
   
   .item-body {
     text-align: center;
-    margin-left: 50px; /* Adjust margin to make space for the logo */
-    z-index: 2; /* Ensure the content appears above the parallax background */
+    margin-left: 50px;
+    z-index: 2; 
   }
   
   @keyframes cursor {
@@ -58,23 +93,23 @@
   .text-container {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 80px;
-    white-space: nowrap; /* Prevent line breaks */
-    position: relative; /* Position relative for cursor animation */
+    white-space: nowrap;
+    position: relative; 
   }
   
   .text-container::after {
-    position: absolute; /* Position cursor relative to container */
+    position: absolute; 
     top: 0;
     right: 0;
-    animation: cursor 1s infinite; /* Make cursor blink */
+    animation: cursor 1s infinite;
   }
   
   h2 {
-    display: inline-block; /* Display inline to allow typing effect */
-    overflow: hidden; /* Hide overflow */
-    white-space: nowrap; /* Prevent line breaks */
-    width: 0; /* Start with zero width */
-    animation: typing 5s forwards; /* Typing animation */
+    display: inline-block; 
+    overflow: hidden;
+    white-space: nowrap; 
+    width: 0; 
+    animation: typing 5s forwards; 
   }
   
   @keyframes typing {
@@ -82,13 +117,11 @@
     to { width: 100%; }
   }
   
-  /* The switch - the box around the slider */
   .switch {
     font-size: 17px;
-    /* position: fixed;  *//* Remove this line */
-    bottom: 20px; /* Adjust bottom position as needed */
-    left: 50%; /* Place at the horizontal center */
-    transform: translateX(-50%); /* Center horizontally */
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
     display: inline-block;
     width: 3.5em;
     height: 2em;
@@ -100,7 +133,6 @@
     height: 0;
   }
   
-  /* The slider */
   .slider {
     position: absolute;
     cursor: pointer;
@@ -198,12 +230,12 @@
         }
   
         &__text {
-            display: none; /* Hide the text element */
+            display: none; 
         }
   
         &__list {
-            margin: 0; /* Reset margin */
-            padding: 0 10px; /* Add padding for left and right spacing */
+            margin: 0;
+            padding: 0 10px;
             text-align: center;
             list-style: none;
             -webkit-animation-name: change;
